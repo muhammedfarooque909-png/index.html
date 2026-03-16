@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SHODA SINAN Cooldrinks And Snacks</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+  <body>
+    
+  <header> 
+    <div class="container">
+       <div class="header"> 
+        <div class="logo">
+           <img src="images\logo.jpeg" /> 
+          </div>
+           
+<!-- Cart Icon -->
+<div class="cart-icon" onclick="toggleCart()">
+    🛒 <span id="cart-count">0</span>
+</div>
+
+<!-- Floating Cart Sidebar -->
+<div id="cart-sidebar">
+    <div class="cart-header">
+        <h2>My Cart</h2>
+        <span class="close-cart" onclick="toggleCart()">✖</span>
+    </div>
+
+    <div id="cart-container">
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Total</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items"></tbody>
+        </table>
+
+        <h3>Total: ₹<span id="cart-total">0</span></h3>
+        <button onclick="checkout()">Checkout</button>
+    </div>
+</div>
+
+<div class="search">
+    <input type="text" id="searchBox" placeholder="Search products..." onkeyup="searchProduct()">
+</div>
+
+
+
+         <div class="menu">
+<a href="#menu" class="openicon">&#9776;</a>
+
+<nav id="menu">
+<a href="#" class="closeicon">&#x2715;</a>
+
+<ul>
+<li><a href="#top" class="active">Home</a></li>
+<li><a href="#category">Category</a></li>
+<li><a href="#about-us">About Us</a></li>
+<li><a href="javascript:void(0)" onclick="openRegister(this)">Register</a></li>
+<li><a href="#contact-us">Contact Us</a></li>
+<li><a href="javascript:void(0)" onclick="openAccount()">Account</a></li>
+<button id="login-btn" onclick="openLogin()">Login</button>
+</ul>
+
+</nav>
+</div>
+
+        </div>
+      </div>
+    </header>
+
+    <img src="images\slider.jpeg" class="w-100">
+
+
+   <div class="container">
+<div class="banner">
+<img src="images\banner-1.jpeg"
+class="w-100" />
+<img src="images\banner-2.jpeg"
+class="w-100" />
+</div>
+</div>
+
+    <div class="container">
+        <div class="product">
+          <div class="pro" data-name="pepsi">
+   <img src="images/p-1.jpeg" class="w-100" />
+   <p>200ml Pepsi</p>
+   <p><b>$60.00</b> <s>$70.00</s></p>
+   <button onclick="addToCart('200ml Pepsi',60)">Add to Cart</button>
+</div>
+          <div class="pro" data-name="sprite">
+   <img src="images/p-2.jpeg" class="w-100" />
+   <p>200ml Sprite</p>
+   <p><b>$60.00</b> <s>$70.00</s></p>
+   <button onclick="addToCart('200ml Sprite',60)">Add to Cart</button>
+</div>
+          <div class="pro" data-name="fanta">
+           <img src="images/p-3.jpeg" class="w-100" />
+           <p>200ml Fanta</p>
+
+           <p><b></b>$60.00</b> <s>$70.00</s></p>
+            <button onclick="addToCart('200ml Fanta',60)">Add to Cart</button>
+        </div>
+          <div class="pro" data-name="coca-cola">
+           <img src="images\p-4.jpeg" class="w-100" />
+           <p>200ml coca-cola</p>
+           <p><b></b>$60.00</b> <s>$70.00</s></p>
+           <button onclick="addToCart('200ml coca-cola',60)">Add to Cart</button>
+        </div>
+          <div class="pro" data-name="good-day-biscuit">
+           <img src="images\p-5.jpeg" class="w-100" />
+           <p>Good Day Biscuit</p>
+           <p><b></b>$20.00</b> <s>$25.00</s></p>
+           <button onclick="addToCart('Good Day Biscuit',20)">Add to Cart</button>
+        </div>
+          <div class="pro" data-name="kurukure">
+           <img src="images\p-6.jpeg" class="w-100" />
+           <p>Kurukure 200g</p>
+           <p><b></b>$10.00</b> <s>$20.00</s></p>
+           <button onclick="addToCart('Kurukure 200g',10)">Add to Cart</button>
+        </div>
+          <div class="pro" data-name="redbull">
+           <img src="images\p-7.jpeg" class="w-100" />
+           <p>RedBull 200ml</p>
+           <p><b></b>$140.00</b> <s>$150.00</s></p>
+           <button onclick="addToCart('RedBull 200ml',140)">Add to Cart</button>
+        </div>
+          <div class="pro" data-name="lays">
+           <img src="images\p-8.jpeg.jpeg" class="w-100" />
+           <p>Lays 200g</p>
+           <p><b></b>$10.00</b> <s>$20.00</s></p>
+           <button onclick="addToCart('Lays 200g',10)">Add to Cart</button>
+        </div>
+          <div class="pro" data-name="parle-g">
+           <img src="images\p-9.jpeg" class="w-100" />
+           <p>Parle-G Biscuit </p>
+           <p><b></b>$5.00</b> <s>$10.00</s></p>
+           <button onclick="addToCart('Parle-G Biscuit',5)">Add to Cart</button>
+        </div>
+          <div class="pro" data-name="kitkat"> 
+           <img src="images\p-10.jpeg" class="w-100" />
+           <p>Kitkat</p>
+           <p><b></b>$10.00</b> <s>$20.00</s></p>
+           <button onclick="addToCart('Kitkat',10)">Add to Cart</button>
+        </div>
+          <div class="pro" data-name="diarymilk">
+           <img src="images\p-11.jpeg" class="w-100" />
+           <p>DiaryMilk</p>
+           <p><b></b>$30.00</b> <s>$40.00</s></p>
+           <button onclick="addToCart('DiaryMilk',30)">Add to Cart</button>
+        </div>
+          <div class="pro" data-name="snickers">
+           <img src="images\p-12.jpeg" class="w-100" />
+           <p>Snickers</p>
+           <p><b></b>$30.00</b> <s>$40.00</s></p>
+           <button onclick="addToCart('Snickers',30)">Add to Cart</button>
+        </div>
+
+      </div>
+    </div>
+
+
+    <h2>Shopping Cart</h2>
+<ul id="cart-items"></ul>
+<p>Total: $<span id="total">0</span></p>
+
+<footer>
+    <div class="container">
+        <div class="foot">
+            <div class="column" id="about-us">
+                <h3>About Us</h3>
+                <p>SHODA SINAN is your go-to source for the world's most iconic soft drinks. We pride ourselves on fast service, ice-cold stock, and a selection that keeps you coming back for more.Also we have 10 years of experience.</p>
+
+            </div>      
+
+
+<div id="register-popup" class="register-popup">
+    <div class="register-box">
+        <span class="close-btn" onclick="closeRegister()">✖</span>
+        <h2>Register</h2>
+        <form onsubmit="registerUser(event)">
+    <input type="text" id="reg-name" placeholder="Enter your name" required>
+    <input type="email" id="reg-email" placeholder="Enter your email" required>
+    <input type="text" id="reg-phone" placeholder="Enter your phone" required>
+    <input type="password" id="reg-password" placeholder="Enter your password" required>
+    <button type="submit">Register</button>
+</form>
+    </div>
+</div>
+
+
+
+
+
+<div id="login-panel" class="login-panel">
+    <div class="login-header">
+        <h3>Login</h3>
+        <span onclick="closeLogin()">✖</span>
+    </div>
+
+    <form onsubmit="loginUser(event)" class="login-form">
+        <input type="email" id="login-email" placeholder="Enter Email" required>
+        <input type="password" id="login-password" placeholder="Enter Password" required>
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+
+
+
+
+
+<div id="account-panel" class="account-panel">
+    <div class="account-header">
+        <h3>My Account</h3>
+        <span onclick="closeAccount()">✖</span>
+    </div>
+
+    <div id="account-content">
+        <p><b>Name:</b> <span id="acc-name">Not logged in</span></p>
+        <p><b>Email:</b> <span id="acc-email">-</span></p>
+        <p><b>Phone:</b> <span id="acc-phone">-</span></p>
+
+        
+        <button id="logout-btn" onclick="logoutUser()">Logout</button>
+    </div>
+</div>
+        
+
+
+<button id="login-btn" onclick="goToRegister()">Login</button>
+
+<div class="column">
+                <h3>Opening Timing</h3>
+                <table>
+                    <tr>
+                        <td>Monday - Friday</td>
+                        <td>9:00 AM - 9:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday - Sunday</td>
+                        <td>10:00 AM - 8:00 PM</td>
+                    </tr> 
+                    </table>
+            </div>
+
+<div class="column" id="contact-us">
+        <h3>Contact Us</h3>
+
+        <ul class="contactus">
+            <li>Address: Shoda Sinan CoolBar, MEA Engineering College,Perinthalmanna,Malappuram,683346.</li>
+                <li>email: info@shodasinan.com</li>
+                <li>Phone: +91 7907178451</li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+
+<body id="top"></body>
+
+
+<script src="cart.js"></script>
+  </body>
+</html>
